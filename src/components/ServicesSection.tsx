@@ -7,28 +7,35 @@ const ServicesSection = () => {
     {
       icon: Monitor,
       title: 'Web Design',
-      description: 'The most modern and high-quality design made at a professional level.',
+      description: 'High-quality, modern, responsive designs that capture your brand essence and provide exceptional user experiences.',
+      features: ['Responsive Design', 'Modern UI/UX', 'Brand Identity', 'User-Centered']
     },
     {
       icon: Code,
       title: 'Web Development',
-      description: 'High-quality development of websites at the professional level.',
+      description: 'Scalable and efficient site development using cutting-edge technologies and best practices.',
+      features: ['React/Node.js', 'Database Design', 'API Integration', 'Performance Optimized']
     },
     {
       icon: Smartphone,
       title: 'Mobile Apps',
-      description: 'Professional development of Android applications.',
+      description: 'Android application development using Flutter for cross-platform compatibility and native performance.',
+      features: ['Flutter Development', 'Cross-Platform', 'Native Performance', 'Play Store Ready']
     },
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            What I'm Doing
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-section-title gradient-text mb-6">
+            What I Do
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-4"></div>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            I specialize in creating digital solutions that are not only visually stunning 
+            but also highly functional and user-friendly.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -37,17 +44,31 @@ const ServicesSection = () => {
             return (
               <div
                 key={index}
-                className="bg-card rounded-lg p-6 shadow-lg border border-border hover-scale animate-fade-in group hover:shadow-xl transition-shadow duration-300"
+                className="glass-effect rounded-2xl p-8 hover-scale hover-glow group animate-bounce-in"
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="text-primary mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent size={48} />
+                <div className="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-primary/20 p-4 rounded-2xl inline-block">
+                    <IconComponent size={48} />
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
+                
+                <h3 className="text-xl font-semibold text-foreground mb-4">
                   {service.title}
                 </h3>
-                <p className="text-muted-foreground">
+                
+                <p className="text-muted-foreground mb-6 leading-relaxed">
                   {service.description}
                 </p>
+
+                <div className="space-y-2">
+                  {service.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-center text-sm">
+                      <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                      <span className="text-muted-foreground">{feature}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             );
           })}

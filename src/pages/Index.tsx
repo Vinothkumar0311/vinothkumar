@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, Calendar, Download, Menu, X } from 'lucide-react';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import ServicesSection from '../components/ServicesSection';
@@ -15,7 +14,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'education', 'skills', 'contact'];
+      const sections = ['home', 'about', 'services', 'education', 'skills', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
