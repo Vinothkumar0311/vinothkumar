@@ -7,17 +7,17 @@ const SkillsSection = () => {
   const sectionRef = useRef(null);
 
   const technicalSkills = [
-    { name: 'REACTJS', percentage: 60, icon: Code, color: 'from-blue-500 to-cyan-500' },
-    { name: 'NODEJS', percentage: 70, icon: Server, color: 'from-green-500 to-emerald-500' },
-    { name: 'JAVA', percentage: 70, icon: Coffee, color: 'from-orange-500 to-red-500' },
-    { name: 'FLUTTER', percentage: 75, icon: Smartphone, color: 'from-blue-600 to-indigo-600' },
-    { name: 'MYSQL', percentage: 40, icon: Database, color: 'from-yellow-500 to-orange-500' },
+    { name: 'REACTJS', percentage: 60, icon: Code, color: 'from-blue-400 to-blue-600' },
+    { name: 'NODEJS', percentage: 70, icon: Server, color: 'from-green-400 to-green-600' },
+    { name: 'JAVA', percentage: 70, icon: Coffee, color: 'from-orange-400 to-orange-600' },
+    { name: 'FLUTTER', percentage: 75, icon: Smartphone, color: 'from-blue-500 to-indigo-600' },
+    { name: 'MYSQL', percentage: 40, icon: Database, color: 'from-yellow-400 to-orange-500' },
   ];
 
   const softSkills = [
-    { name: 'Team Work', percentage: 80, icon: Users, color: 'from-purple-500 to-pink-500' },
-    { name: 'Project Management', percentage: 70, icon: Target, color: 'from-indigo-500 to-purple-500' },
-    { name: 'Organization', percentage: 70, icon: FolderOpen, color: 'from-teal-500 to-cyan-500' },
+    { name: 'Team Work', percentage: 80, icon: Users, color: 'from-purple-400 to-pink-500' },
+    { name: 'Project Management', percentage: 70, icon: Target, color: 'from-indigo-400 to-purple-500' },
+    { name: 'Organization', percentage: 70, icon: FolderOpen, color: 'from-teal-400 to-cyan-500' },
   ];
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const SkillsSection = () => {
       >
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-3">
-            <div className={`bg-gradient-to-r ${skill.color} p-2 rounded-lg`}>
+            <div className={`bg-gradient-to-r ${skill.color} p-2 rounded-xl shadow-lg`}>
               <IconComponent className="text-white" size={20} />
             </div>
             <span className="text-foreground font-semibold text-lg">{skill.name}</span>
@@ -56,7 +56,7 @@ const SkillsSection = () => {
         </div>
         
         <div className="relative">
-          <div className="w-full bg-secondary/50 rounded-full h-3 overflow-hidden">
+          <div className="w-full bg-secondary rounded-full h-3 overflow-hidden border border-primary/10">
             <div
               className={`progress-bar h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-2000 ease-out ${
                 isVisible ? 'animate' : ''
@@ -67,14 +67,13 @@ const SkillsSection = () => {
               } as any}
             />
           </div>
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse opacity-30" />
         </div>
       </div>
     );
   };
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8" ref={sectionRef}>
+    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-blue-50/30 to-white" ref={sectionRef}>
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-section-title gradient-text mb-6">
@@ -90,9 +89,9 @@ const SkillsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Technical Skills */}
           <div className="animate-fade-in-left">
-            <div className="glass-effect rounded-2xl p-8 hover-scale h-full">
+            <div className="glass-effect rounded-3xl p-8 hover-scale h-full">
               <h3 className="text-2xl font-semibold text-foreground mb-8 flex items-center">
-                <div className="bg-primary/20 p-2 rounded-lg mr-3">
+                <div className="bg-primary/10 p-2 rounded-xl mr-3 border border-primary/20">
                   <Code className="text-primary" size={24} />
                 </div>
                 Technical Skills
@@ -107,9 +106,9 @@ const SkillsSection = () => {
 
           {/* Soft Skills */}
           <div className="animate-fade-in-right">
-            <div className="glass-effect rounded-2xl p-8 hover-scale h-full">
+            <div className="glass-effect rounded-3xl p-8 hover-scale h-full">
               <h3 className="text-2xl font-semibold text-foreground mb-8 flex items-center">
-                <div className="bg-primary/20 p-2 rounded-lg mr-3">
+                <div className="bg-primary/10 p-2 rounded-xl mr-3 border border-primary/20">
                   <Users className="text-primary" size={24} />
                 </div>
                 Soft Skills
@@ -125,7 +124,7 @@ const SkillsSection = () => {
 
         {/* Skills Summary */}
         <div className="mt-12 animate-fade-in">
-          <div className="glass-effect rounded-2xl p-8 text-center">
+          <div className="glass-effect rounded-3xl p-8 text-center">
             <h3 className="text-xl font-semibold text-foreground mb-6">
               Technology Stack
             </h3>
@@ -136,7 +135,7 @@ const SkillsSection = () => {
               ].map((tech, index) => (
                 <span
                   key={index}
-                  className="bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors duration-300"
+                  className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium hover:bg-primary hover:text-white transition-colors duration-300 border border-primary/20"
                 >
                   {tech}
                 </span>
