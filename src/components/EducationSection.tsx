@@ -90,7 +90,7 @@ const EducationSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Education Timeline */}
           <div className="animate-fade-in-left">
-            <div className="glass-effect rounded-2xl p-8">
+            {/* <div className="glass-effect rounded-2xl p-8"> */}
               <h3 className="text-2xl font-semibold text-foreground mb-8 flex items-center">
                 <GraduationCap className="mr-3 text-primary" size={28} />
                 Education
@@ -126,12 +126,12 @@ const EducationSection = () => {
                   );
                 })}
               </div>
-            </div>
+            {/* </div> */}
           </div>
 
           {/* Experience Timeline */}
           <div className="animate-fade-in-right">
-            <div className="glass-effect rounded-2xl p-8">
+            {/* <div className="glass-effect rounded-2xl p-8"> */}
               <h3 className="text-2xl font-semibold text-foreground mb-8 flex items-center">
                 <Briefcase className="mr-3 text-primary" size={28} />
                 Experience & Certifications
@@ -167,7 +167,7 @@ const EducationSection = () => {
                   );
                 })}
               </div>
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </div>

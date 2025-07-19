@@ -42,11 +42,11 @@ const AboutSection = () => {
               
               <div className="grid grid-cols-2 gap-4 mt-8">
                 <div className="bg-primary/10 rounded-2xl p-4 text-center border border-primary/20">
-                  <div className="text-2xl font-bold text-primary">50+</div>
+                  <div className="text-2xl font-bold text-primary">20+</div>
                   <div className="text-sm text-muted-foreground">Projects Completed</div>
                 </div>
                 <div className="bg-primary/10 rounded-2xl p-4 text-center border border-primary/20">
-                  <div className="text-2xl font-bold text-primary">3+</div>
+                  <div className="text-2xl font-bold text-primary">2+</div>
                   <div className="text-sm text-muted-foreground">Years Experience</div>
                 </div>
               </div>

@@ -100,7 +100,7 @@ const HeroSection = () => {
 
           {/* Right Column - Contact Info Card */}
           <div className="animate-fade-in-right">
-            <div className="glass-effect rounded-2xl p-8 hover-scale hover-glow">
+            {/* <div className="glass-effect rounded-2xl p-8 hover-scale hover-glow"> */}
               <div className="text-center mb-6">
                 <div className="w-32 h-32 bg-gradient-to-br from-primary to-accent rounded-full mx-auto mb-4 flex items-center justify-center text-4xl font-bold text-white">
                   VK
@@ -149,7 +149,7 @@ const HeroSection = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            {/* </div> */}
           </div>
         </div>
 
