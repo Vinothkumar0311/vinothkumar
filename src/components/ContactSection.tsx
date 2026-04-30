@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from "emailjs-com";
+
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -76,50 +76,47 @@ const ContactSection = () => {
   // };
 
   const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!formData.name || !formData.email || !formData.message) {
-    toast({
-      title: "Error",
-      description: "Please fill in all required fields.",
-      variant: "destructive",
-    });
-    return;
-  }
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Error",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
 
-  emailjs.send(
-    "service_rn65mln",      // Replace with your EmailJS service ID
-    "template_40s6t4q",     // Replace with your EmailJS template ID
-    {
-      name: formData.name,
-      email: formData.email,
-      subject: formData.subject,
-      message: formData.message,
-    },
-    "u0UCqQWluU-i22XL7"       // Replace with your EmailJS public key
-  )
-  .then(() => {
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
+    const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxYsJU59mq6IiE8FVdkgkOxsQl2LYNHpRRh_suu7_MRJsWubWBRx3Ce2yFRzBniIZtnFQ/exec";
 
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
+    // Send to Google Sheets (Safe background request)
+    fetch(GOOGLE_SHEET_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: JSON.stringify(formData),
+    })
+    .then(() => {
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. Your data has been recorded in our system.",
+      });
+
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
+    })
+    .catch((error) => {
+      console.error("Sheets Error:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send your message. Please try again later.",
+        variant: "destructive",
+      });
     });
-  })
-  .catch((error) => {
-    console.error("EmailJS Error:", error);
-    toast({
-      title: "Error",
-      description: "Failed to send your message. Please try again later.",
-      variant: "destructive",
-    });
-  });
-};
+  };
 
 
   const handleChange = (
@@ -215,7 +212,9 @@ const ContactSection = () => {
                 </h4>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/vinoth-kumar-s-8300611a0/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-primary/20 p-3 rounded-xl hover:bg-primary hover:scale-110 transition-all duration-300 group"
                   >
                     <Linkedin
@@ -224,7 +223,9 @@ const ContactSection = () => {
                     />
                   </a>
                   <a
-                    href="#"
+                    href="https://github.com/Vinothkumar0311"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-primary/20 p-3 rounded-xl hover:bg-primary hover:scale-110 transition-all duration-300 group"
                   >
                     <Github

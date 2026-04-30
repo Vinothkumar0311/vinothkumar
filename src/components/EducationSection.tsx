@@ -1,14 +1,14 @@
 
 import React from 'react';
-import { GraduationCap, Award, Briefcase, Calendar } from 'lucide-react';
+import { GraduationCap, Award, Briefcase, Calendar, Smartphone } from 'lucide-react';
 
 const EducationSection = () => {
   const education = [
     {
       type: 'education',
-      title: 'B.E. (Computer Science and Engineering)',
+      title: 'B.E. in Computer Science and Engineering',
       institution: 'Sri Shanmugha College of Engineering and Technology',
-      period: '2018–2022',
+      period: '2018 – 2022',
       icon: GraduationCap,
       description: 'Focused on software engineering, data structures, and web technologies.'
     },
@@ -16,7 +16,7 @@ const EducationSection = () => {
       type: 'education',
       title: 'HSC (Computer Science)',
       institution: 'Gandhi Matriculation Higher Secondary School',
-      period: '2017–2018',
+      period: '2017 – 2018',
       icon: GraduationCap,
       description: 'Specialized in computer science with mathematics and physics.'
     },
@@ -24,9 +24,9 @@ const EducationSection = () => {
       type: 'education',
       title: 'SSLC',
       institution: 'Gandhi Matriculation Higher Secondary School',
-      period: '2015–2016',
+      period: '2015 – 2016',
       icon: GraduationCap,
-      description: 'Strong foundation in science and mathematics.'
+      description: 'Built a strong foundation in science and mathematics.'
     },
   ];
 
@@ -35,41 +35,25 @@ const EducationSection = () => {
       type: 'experience',
       title: 'Software Engineer',
       institution: 'Aakam360',
-      period: 'August 2024 – Present',
+      period: 'Aug 2024 – Present',
       icon: Briefcase,
-      description: 'Full-stack development using React, Node.js, and cloud technologies.'
+      description: 'Full-stack development involving modern technologies like React, Node.js, and cloud platforms. Worked on scalable web applications.'
     },
     {
-      type: 'certification',
-      title: 'Web Development Internship',
-      institution: 'Internshala',
-      period: 'Nov 2021 – Feb 2022',
-      icon: Award,
-      description: 'Hands-on experience with modern web development frameworks.'
+      type: 'experience',
+      title: 'Mobile App Development Intern',
+      institution: 'Senchola Technology Solutions',
+      period: 'Sep 2023 – Dec 2023',
+      icon: Smartphone,
+      description: 'Achieved a J1+ Grade. Recognized for enthusiasm, leadership, and self-motivation during the virtual internship.'
     },
     {
-      type: 'certification',
-      title: 'App Development Internship',
-      institution: 'Internshala',
-      period: 'Aug 2021 – Oct 2021',
-      icon: Award,
-      description: 'Mobile app development using Flutter and Dart.'
-    },
-    {
-      type: 'certification',
-      title: 'Java & J2EE Training',
-      institution: 'Greens Technology',
-      period: 'Jan 2023 – Apr 2023',
-      icon: Award,
-      description: 'Enterprise Java development and Spring framework.'
-    },
-    {
-      type: 'certification',
-      title: 'Software Development Internship',
+      type: 'experience',
+      title: 'Software Development Intern',
       institution: 'E2 InfoSystem',
       period: 'Mar 2023 – Jul 2023',
-      icon: Award,
-      description: 'Full-stack development and database management.'
+      icon: Briefcase,
+      description: 'Involved in full-stack projects, implementing REST APIs and managing SQL/NoSQL databases.'
     },
   ];
 

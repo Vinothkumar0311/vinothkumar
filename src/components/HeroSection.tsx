@@ -37,15 +37,18 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background particles */}
       <div className="particles">
-        {[...Array(5)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <div
             key={i}
             className="particle"
             style={{
-              width: Math.random() * 4 + 2 + 'px',
-              height: Math.random() * 4 + 2 + 'px',
+              width: Math.random() * 8 + 4 + 'px',
+              height: Math.random() * 8 + 4 + 'px',
               top: Math.random() * 100 + '%',
-              animationDuration: Math.random() * 3 + 3 + 's',
+              left: Math.random() * 100 + '%',
+              animationDuration: Math.random() * 10 + 5 + 's',
+              animationDelay: Math.random() * 5 + 's',
+              opacity: Math.random() * 0.3 + 0.1,
             }}
           />
         ))}
@@ -57,31 +60,30 @@ const HeroSection = () => {
           <div className="space-y-8 animate-fade-in-left">
             <div className="space-y-6">
               <div className="space-y-2">
-                <p className="text-primary text-lg font-medium animate-fade-in">
+                <p className="text-primary text-xl font-medium tracking-wide animate-fade-in uppercase">
                   Hello, I'm
                 </p>
-                <h1 className="text-hero gradient-text animate-fade-in-up">
+                <h1 className="text-hero gradient-text animate-fade-in-up pb-2">
                   VinothKumar Sakthivel
                 </h1>
                 <div className="h-12 flex items-center">
-                  <span className="text-2xl text-muted-foreground mr-2">I'm a </span>
-                  <span className="text-2xl font-semibold text-primary min-w-0">
+                  <span className="text-2xl text-muted-foreground mr-2 font-light">I'm a </span>
+                  <span className="text-3xl font-bold text-primary min-w-0">
                     {displayText}
-                    <span className="animate-pulse">|</span>
+                    <span className="animate-pulse ml-1 text-primary/70">|</span>
                   </span>
                 </div>
               </div>
               
-              <p className="text-lg text-muted-foreground max-w-lg leading-relaxed animate-fade-in">
-                Turning complex problems into simple, beautiful, and intuitive digital solutions 
-                that make a difference.
+              <p className="text-xl text-muted-foreground max-w-lg leading-relaxed animate-fade-in font-light">
+                Turning complex problems into simple, beautiful, and <span className="text-primary font-medium">intuitive digital solutions</span> that make a difference.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4 animate-fade-in">
+            <div className="flex flex-wrap gap-4 animate-fade-in pt-4">
               <Button 
                 size="lg" 
-                className="hover-scale hover-glow bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3"
+                className="hover-scale hover-glow bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-2xl shadow-xl shadow-primary/20"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Mail className="mr-2 h-5 w-5" />
@@ -90,66 +92,73 @@ const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="hover-scale border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-3"
+                className="hover-scale border-primary/20 text-primary hover:bg-primary/5 px-8 py-6 text-lg rounded-2xl backdrop-blur-sm"
+                asChild
               >
-                <Download className="mr-2 h-5 w-5" />
-                Download CV
+                <a href="/autoCV__1_ (1).pdf" download="VinothKumar_CV.pdf">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download CV
+                </a>
               </Button>
             </div>
           </div>
 
           {/* Right Column - Contact Info Card */}
           <div className="animate-fade-in-right">
-            {/* <div className="glass-effect rounded-2xl p-8 hover-scale hover-glow"> */}
-              <div className="text-center mb-6">
-                <div className="w-32 h-32 bg-gradient-to-br from-primary to-accent rounded-full mx-auto mb-4 flex items-center justify-center text-4xl font-bold text-white">
+            <div className="glass-effect rounded-[2.5rem] p-10 hover-glow animate-float border border-white/40 shadow-2xl relative overflow-hidden group">
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl group-hover:bg-primary/20 transition-colors duration-700"></div>
+              <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-accent/10 rounded-full blur-3xl group-hover:bg-accent/20 transition-colors duration-700"></div>
+              
+              <div className="text-center mb-10 relative z-10">
+                <div className="w-40 h-40 bg-gradient-to-br from-primary via-primary to-accent rounded-3xl mx-auto mb-6 flex items-center justify-center text-5xl font-black text-white shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
                   VK
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Contact Information</h3>
+                <h3 className="text-2xl font-bold text-foreground">Contact Details</h3>
+                <div className="w-12 h-1 bg-primary/30 mx-auto mt-3 rounded-full"></div>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-secondary/50 transition-colors">
-                  <div className="bg-primary/20 p-2 rounded-lg">
-                    <Mail className="h-5 w-5 text-primary" />
+              <div className="space-y-5 relative z-10">
+                <div className="flex items-center space-x-5 p-4 rounded-2xl hover:bg-white/60 transition-all duration-300 border border-transparent hover:border-white/50 hover:shadow-sm">
+                  <div className="bg-primary/10 p-3 rounded-xl shadow-inner">
+                    <Mail className="h-6 w-6 text-primary" />
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="text-foreground font-medium">svinothkumar0301@gmail.com</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-0.5">Email Me</p>
+                    <p className="text-foreground font-medium truncate">svinothkumar0301@gmail.com</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-secondary/50 transition-colors">
-                  <div className="bg-primary/20 p-2 rounded-lg">
-                    <Phone className="h-5 w-5 text-primary" />
+                <div className="flex items-center space-x-5 p-4 rounded-2xl hover:bg-white/60 transition-all duration-300 border border-transparent hover:border-white/50 hover:shadow-sm">
+                  <div className="bg-primary/10 p-3 rounded-xl shadow-inner">
+                    <Phone className="h-6 w-6 text-primary" />
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Phone</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-0.5">Call Me</p>
                     <p className="text-foreground font-medium">+91 6382169091</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-secondary/50 transition-colors">
-                  <div className="bg-primary/20 p-2 rounded-lg">
-                    <MapPin className="h-5 w-5 text-primary" />
+                <div className="flex items-center space-x-5 p-4 rounded-2xl hover:bg-white/60 transition-all duration-300 border border-transparent hover:border-white/50 hover:shadow-sm">
+                  <div className="bg-primary/10 p-3 rounded-xl shadow-inner">
+                    <MapPin className="h-6 w-6 text-primary" />
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Location</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-0.5">Location</p>
                     <p className="text-foreground font-medium">Namakkal, Tamil Nadu</p>
                   </div>
                 </div>
 
-                <div className="flex items-center space-x-4 p-3 rounded-lg hover:bg-secondary/50 transition-colors">
-                  <div className="bg-primary/20 p-2 rounded-lg">
-                    <Calendar className="h-5 w-5 text-primary" />
+                <div className="flex items-center space-x-5 p-4 rounded-2xl hover:bg-white/60 transition-all duration-300 border border-transparent hover:border-white/50 hover:shadow-sm">
+                  <div className="bg-primary/10 p-3 rounded-xl shadow-inner">
+                    <Calendar className="h-6 w-6 text-primary" />
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Birthday</p>
-                    <p className="text-foreground font-medium">November 3, 2001</p>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-0.5">Available From</p>
+                    <p className="text-foreground font-medium">Monday — Friday</p>
                   </div>
                 </div>
               </div>
-            {/* </div> */}
+            </div>
           </div>
         </div>
 

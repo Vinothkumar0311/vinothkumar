@@ -167,32 +167,32 @@ const SkillsSection = () => {
 
   const technicalSkills = [
     {
-      name: "REACTJS",
-      percentage: 60,
+      name: "React.js",
+      percentage: 90,
       icon: Code,
       color: "from-blue-400 to-blue-600",
     },
     {
-      name: "NODEJS",
-      percentage: 70,
+      name: "Node.js",
+      percentage: 85,
       icon: Server,
       color: "from-green-400 to-green-600",
     },
     {
-      name: "JAVA",
-      percentage: 70,
+      name: "Java",
+      percentage: 80,
       icon: Coffee,
       color: "from-orange-400 to-orange-600",
     },
     {
-      name: "FLUTTER",
-      percentage: 75,
+      name: "Flutter",
+      percentage: 85,
       icon: Smartphone,
       color: "from-blue-500 to-indigo-600",
     },
     {
-      name: "MYSQL",
-      percentage: 40,
+      name: "MySQL",
+      percentage: 80,
       icon: Database,
       color: "from-yellow-400 to-orange-500",
     },
@@ -201,19 +201,19 @@ const SkillsSection = () => {
   const softSkills = [
     {
       name: "Team Work",
-      percentage: 80,
+      percentage: 95,
       icon: Users,
       color: "from-purple-400 to-pink-500",
     },
     {
       name: "Project Management",
-      percentage: 70,
+      percentage: 85,
       icon: Target,
       color: "from-indigo-400 to-purple-500",
     },
     {
       name: "Organization",
-      percentage: 70,
+      percentage: 90,
       icon: FolderOpen,
       color: "from-teal-400 to-cyan-500",
     },
@@ -221,7 +221,7 @@ const SkillsSection = () => {
 
   const techStack = [
     {
-      name: "React",
+      name: "React.js",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
     },
     {
@@ -256,11 +256,17 @@ const SkillsSection = () => {
       name: "Git",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
     },
-    // { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
-    // { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
     {
-      name: "Figma",
-      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+      name: "Postman",
+      logo: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
+    },
+    {
+      name: "VS Code",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    },
+    {
+      name: "Python",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     },
   ];
 
@@ -286,41 +292,18 @@ const SkillsSection = () => {
 
     return (
       <div
-        className="mb-8 animate-fade-in-up"
+        className="animate-fade-in-up h-full"
         style={{ animationDelay: `${index * 0.1}s` }}
       >
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div
-              className={`bg-gradient-to-r ${skill.color} p-2 rounded-xl shadow-lg`}
-            >
-              <IconComponent className="text-white" size={20} />
-            </div>
-            <span className="text-foreground font-semibold text-lg">
-              {skill.name}
-            </span>
+        <div className="flex flex-col items-center justify-center p-6 rounded-[2rem] bg-white/50 border border-primary/5 hover:border-primary/20 hover:bg-white transition-all duration-500 hover:shadow-xl group text-center h-full">
+          <div
+            className={`bg-gradient-to-r ${skill.color} p-4 rounded-2xl shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 mb-4`}
+          >
+            <IconComponent className="text-white" size={28} />
           </div>
-          <span className="text-primary font-bold text-lg">
-            {skill.percentage}%
+          <span className="text-foreground font-bold text-base group-hover:text-primary transition-colors duration-300">
+            {skill.name}
           </span>
-        </div>
-
-        <div className="relative">
-          <div className="w-full bg-secondary rounded-full h-3 overflow-hidden border border-primary/10">
-            <div
-              className={`progress-bar h-full bg-gradient-to-r ${
-                skill.color
-              } rounded-full transition-all duration-2000 ease-out ${
-                isVisible ? "animate" : ""
-              }`}
-              style={
-                {
-                  "--progress-width": `${skill.percentage}%`,
-                  width: isVisible ? `${skill.percentage}%` : "0%",
-                } as any
-              }
-            />
-          </div>
         </div>
       </div>
     );
@@ -339,24 +322,24 @@ const SkillsSection = () => {
             Skills & Expertise
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-4"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-light">
             A comprehensive overview of my technical skills and soft skills that
             enable me to deliver exceptional digital solutions.
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Technical Skills */}
           <div className="animate-fade-in-left">
-            <div className="glass-effect rounded-3xl p-8 hover-scale h-full">
-              <h3 className="text-2xl font-semibold text-foreground mb-8 flex items-center">
-                <div className="bg-primary/10 p-2 rounded-xl mr-3 border border-primary/20">
+            <div className="glass-effect rounded-[2.5rem] p-8 hover-glow h-full border border-white/40 shadow-xl">
+              <h3 className="text-2xl font-bold text-foreground mb-10 flex items-center">
+                <div className="bg-primary/10 p-3 rounded-2xl mr-4 border border-primary/20">
                   <Code className="text-primary" size={24} />
                 </div>
                 Technical Skills
               </h3>
-              <div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {technicalSkills.map((skill, index) => (
                   <SkillBar key={index} skill={skill} index={index} />
                 ))}
@@ -366,14 +349,14 @@ const SkillsSection = () => {
 
           {/* Soft Skills */}
           <div className="animate-fade-in-right">
-            <div className="glass-effect rounded-3xl p-8 hover-scale h-full">
-              <h3 className="text-2xl font-semibold text-foreground mb-8 flex items-center">
-                <div className="bg-primary/10 p-2 rounded-xl mr-3 border border-primary/20">
+            <div className="glass-effect rounded-[2.5rem] p-8 hover-glow h-full border border-white/40 shadow-xl">
+              <h3 className="text-2xl font-bold text-foreground mb-10 flex items-center">
+                <div className="bg-primary/10 p-3 rounded-2xl mr-4 border border-primary/20">
                   <Users className="text-primary" size={24} />
                 </div>
                 Soft Skills
               </h3>
-              <div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 {softSkills.map((skill, index) => (
                   <SkillBar key={index} skill={skill} index={index} />
                 ))}
@@ -383,31 +366,24 @@ const SkillsSection = () => {
         </div>
 
         {/* Technology Stack with Logos */}
-        <div className="mt-12 animate-fade-in">
-          <div className="glass-effect rounded-3xl p-8 text-center">
-            <h3 className="text-xl font-semibold text-foreground mb-6">
+        <div className="mt-16 animate-fade-in">
+          <div className="glass-effect rounded-[2.5rem] p-10 text-center border border-white/40 shadow-xl">
+            <h3 className="text-2xl font-bold text-foreground mb-8">
               Technology Stack
             </h3>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-5">
               {techStack.map((tech, index) => (
-                // <span
-                //   key={index}
-                //   className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium border border-primary/20 transition-all duration-300 hover:bg-white hover:border-blue-500 hover:text-blue-600 hover:shadow-lg hover:scale-105 relative z-10"
-                // >
-                //   <img src={tech.logo} alt={tech.name} className="w-5 h-5" />
-                //   {tech.name}
-                // </span>
-                <span
+                <div
                   key={index}
-                  className="flex flex-col items-center gap-2 bg-primary/10 text-primary px-4 py-3 rounded-xl text-sm font-medium border border-primary/20 transition-all duration-300 hover:bg-white hover:border-blue-500 hover:text-blue-600 hover:shadow-lg hover:scale-105 relative z-10 justify-center"
+                  className="flex flex-col items-center gap-3 bg-white/60 text-primary px-6 py-5 rounded-2xl text-sm font-bold border border-primary/5 transition-all duration-500 hover:bg-white hover:border-primary/20 hover:text-primary hover:shadow-xl hover:-translate-y-2 relative z-10 justify-center min-w-[100px]"
                 >
                   <img
                     src={tech.logo}
                     alt={tech.name}
-                    className="w-8 h-8 object-contain"
+                    className="w-10 h-10 object-contain grayscale hover:grayscale-0 transition-all duration-500"
                   />
-                  <span className="text-center">{tech.name}</span>
-                </span>
+                  <span className="text-center text-muted-foreground group-hover:text-primary">{tech.name}</span>
+                </div>
               ))}
             </div>
           </div>
