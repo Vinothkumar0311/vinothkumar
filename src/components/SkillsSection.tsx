@@ -179,10 +179,10 @@ const SkillsSection = () => {
       color: "from-green-400 to-green-600",
     },
     {
-      name: "Java",
-      percentage: 80,
-      icon: Coffee,
-      color: "from-orange-400 to-orange-600",
+      name: "Next.js",
+      percentage: 85,
+      icon: Code,
+      color: "from-gray-700 to-black",
     },
     {
       name: "Flutter",
