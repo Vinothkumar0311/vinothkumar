@@ -265,6 +265,10 @@ const SkillsSection = () => {
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
     },
     {
+      name: "Next.js",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    },
+    {
       name: "Python",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     },
